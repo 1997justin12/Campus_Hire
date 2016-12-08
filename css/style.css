@@ -1,0 +1,26 @@
+@font-face
+{
+	font-family: campushire;
+	src: url(../font_styles/BEARPAW.ttf);
+}
+body
+{
+	background-color: #041a00;
+}
+.header_nav
+{
+	background-color: rgba(35, 2, 2, 0.98);
+	border-radius: 0px;
+	box-shadow: inset -3px -3px 7px -4px black;
+}
+.header_font_style
+{
+	font-family: campushire;
+	font-size: 3em;
+	color: green;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
