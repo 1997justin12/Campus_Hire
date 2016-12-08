@@ -1,6 +1,7 @@
 
 <?php
   include_once("../Function/functions.php");
+  include_once("../Modal/applicant-form-edit.php");
 ?>
 <script type="text/javascript" src="../script/jquery-1.12.1.min.js"></script>
 <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>

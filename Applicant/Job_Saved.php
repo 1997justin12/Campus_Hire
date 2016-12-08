@@ -1,14 +1,14 @@
   <div id="list-company" style="display: none;">
-    <h1 class="page-header"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</h1>
+    <h1 class="page-header"><span class="glyphicon glyphicon-dashboard"></span> History</h1>
               <h2 class="sub-header">List of Company </h2>
               <div class="table-responsive">
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Address</th>
+                      <th>Company Name</th>
+                      <th>Location</th>
                       <th>Contact #</th>
-                      <th>Email Add</th>
+                      <th>Email Address</th>
                     </tr>
                   </thead>
                   <tbody>

@@ -1,4 +1,6 @@
 <?php
+
+
 	include_once("Database_Connect.php");
 
 	if(isset($_REQUEST['data']))
@@ -9,7 +11,7 @@
 		$username = $_REQUEST['data']['user'];
 		$password = md5($_REQUEST['data']['pass']);
 		$profile_picture = $_REQUEST['data']['prpic'];
-			
+		$type = 1;
 
 			$db_users = mysqli_query($db_connect,"select username from applicant");
 				while($result = mysqli_fetch_array($db_users))
@@ -28,17 +30,19 @@
 			email_Address,
 			username,
 			password,
-			profile_picture)values(
+			profile_Picture,
+			type)values(
 				'$name',
 				'$course',
 				'$email',
 				'$username',
 				'$password',
-				'$profile_Picture')";
+				'$profile_picture',
+				'$type')";
 			if(mysqli_query($db_connect,$db_insert))
 			{
-				 $_SESSION['user_id'] = $username;
-				
+				 $_SESSION['user_type'] = $type;
+				 $_SESSION['user'] = $username;
 			}	
 	}
 
@@ -58,10 +62,18 @@
 
 
 	if ( isset( $_FILES["file"] ) ){
-  $dir = '../Pictures/';
-  $blob = file_get_contents($_FILES["file"]['tmp_name']);
-  file_put_contents($dir.$_FILES["file"]["name"], $blob);
- 	
+ 	$target_dir = "../Pictures/";
+	$target_file = $target_dir . basename($_FILES["file"]['name']);
+	$uploadOk = 1;
+	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+    if (move_uploaded_file($_FILES["file"]['tmp_name'], $target_file)) {
+        echo "The file ". basename($_FILES["file"]['tmp_name']). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    
+}
+	print_r($_FILES["file"]["size"]);
 }
 				
 ?>

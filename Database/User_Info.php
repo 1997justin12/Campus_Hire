@@ -8,8 +8,6 @@
 
 				$_SESSION['user_information'] = array(
 												'name' => $info['applicant_Name'],
-												'age' => $info['age'],
-												'gender' => $info['gender'],
 												'course' => $info['course'],
 												'email' => $info['email_Address'],
 												'profile_picture' => $info['profile_Picture']

@@ -15,15 +15,6 @@
             </div>
             <br>
 
-  
-            <div class="col-sm-12">
-              <div class="col-sm-12">
-                <input type="date"  class="form-control" name="app-birth" placeholder="Birthdate" required>
-                 <br>
-              </div>
-            </div>
-            <br>
-
             <div class="col-sm-12">
               <div class="col-sm-12">
                 <input type="text"  class="form-control" name="app-course" placeholder="Course" required>
@@ -31,7 +22,6 @@
               </div>
             </div>
             <br>
-
 
             <div class="col-sm-12">
               <div class="col-sm-12">

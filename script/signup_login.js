@@ -1,23 +1,14 @@
 var elements = [];
+var profile_pic = "";
+var formData = new FormData();
 var loadFile = function (event) 
  				{
                 var output = document.getElementById('preview');
                     output.src = URL.createObjectURL(event.target.files[0]);
-
-                    var formData = new FormData();
- 					    formData.append('file', event.target.files[0], '.jpg');
-
-                     $.ajax({
-    url: "../Database/Database_Applicant.php",
-    data: formData,
-    processData: false,
-    contentType: false,
-    type: 'POST',
-    success:function(data)
-    {
-    	console.log(data);
-    }
-  });
+ 					    formData.append('file', event.target.files[0]);
+ 					    	 profile_pic = event.target.files[0];
+ 					    	 profile_pic = profile_pic['name'];
+ 					    	 console.log(profile_pic);
                 }
 
 function verification_signup()
@@ -27,7 +18,7 @@ function verification_signup()
 		var course = document.getElementsByName('app-course')[0];
 		var username = document.getElementsByName('app-username')[0];
 		var password = document.getElementsByName('app-pass')[0];
-		var profile_pic = document.getElementsByName('imgfile')[0];
+		
 
 			if(name.value == "")
 			{
@@ -72,7 +63,7 @@ function verification_signup()
 								 	course : course.value,
 								 	user : username.value,
 								 	pass : password.value,
-								 	prpic : profile_pic.value
+								 	prpic : profile_pic
 								 };
 
 					send_info(array_info);
@@ -90,7 +81,6 @@ function check_user(e)
 			{checking:e.value},
 			function success(data)
 			{
-				console.log(data);
 				if(data == "User Exist")
 				{
 					e.style.transition = "all 2s";
@@ -174,15 +164,26 @@ function send_info1(e)
 
 function send_info(e)
 {
+
+        $.ajax({
+		    url: "../Database/Database_Applicant.php",
+		    data: formData,
+		    processData: false,
+		    contentType: false,
+		    type: 'POST',
+		    success:function(data)
+		    {
+		    	console.log(data);
+		    }
+	    });
+
 		$.post
 		(
 			"../Database/Database_Applicant.php",
 			{data:e},
 			function success(data)
 			{
-			
-					window.location = "../Controller/Dashboard.php";
-				
+					 window.location = "../Controller/Dashboard.php";
 			}
 		);
 }
