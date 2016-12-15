@@ -14,12 +14,12 @@
 						if($users['Type'] == 1)
 						{
 							$_SESSION['user_type'] = 1;
-							$_SESSION['user'] = $username;
+							$_SESSION['user_id'] = $users['ID'];
 						}
 						if($users['Type'] == 2)
 						{
 							$_SESSION['user_type'] = 2;
-							$_SESSION['user'] = $username;
+							$_SESSION['user_id'] = $users['ID'];
 						}
 						$flag++;
 						break;

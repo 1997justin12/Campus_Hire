@@ -1,0 +1,184 @@
+body
+{
+	background-color: rgba(192, 192, 192, 0.11);
+}
+@font-face
+{
+	font-family: profile_text;
+	src: url(../font_styles/azoft-sans.ttf);
+}
+@font-face
+{
+	font-family: campushire;
+	src: url(../font_styles/BEARPAW.ttf);
+}
+.title
+{
+	font-family: campushire;
+	font-size: 2em;
+	margin: 0;
+	color: green;
+	font-weight: bold;
+	padding: 0;
+}
+.input-group
+{
+	bottom: 10px;
+	width: 500px;
+	margin-left: 20px;
+}
+.header-title
+{
+	position: relative;
+	top: 20px;
+}
+.banner-top
+{
+	background-color: white;
+	height: 60px;
+}
+.caret
+{
+	position: relative;
+	top: 30px;
+	float: right;
+	margin: 5px;
+}
+.navbar
+{
+	font-weight: bold;
+	font-family: "Calibri", serif;
+}
+.dropdown-menu
+{
+	top: 50px;
+}
+.img-circ
+{
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	float: left;
+	margin: 0;
+}
+.img-circ1
+{
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	float: left;
+
+}
+.profile-text
+{
+	float: left;
+	margin: 5px;
+	font-family: profile_text;
+
+}
+.profile-top
+{
+	position: relative;
+	top: 20px;
+	float: right;
+
+}
+.header-navigator
+{
+	border-radius: 0;
+	padding: 0;
+	background-color: rgba(35, 2, 2, 0.98);
+	border-radius: 0px;
+	box-shadow: inset -3px -3px 7px -4px black;
+}
+.search-box
+{  
+	height: 28px;
+	width: 20%;
+}
+
+.post
+{
+	background-color: rgba(255, 255, 255, 0.74);
+	height: 190px;
+	margin: 20px;
+	border: 2px solid rgba(192, 192, 192, 0.35);
+	border-radius: 1% 1% 1% 1%;
+
+}
+.post-name
+{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid silver;
+}
+.post-body
+{
+	height: 125px;
+	overflow-x: auto;
+	font-family: Tahoma, san serif;
+	font-size: .9em;
+}
+.post-bottom
+{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top: 1px solid silver;
+}
+.other-side
+{
+	margin-top: 20px;
+	padding: 0;
+}	
+.btn_profile
+{
+	border-radius: 0;
+	box-shadow: 5px 5px 5px 1px black;
+	font-weight: bold;
+}	
+.news
+{
+	border-bottom: 1px solid silver;
+}
+.bio-container
+{
+	background-color: rgba(255, 255, 255, 0.74);
+	height: 700px;
+	margin: 20px;
+	border: 2px solid rgba(192, 192, 192, 0.35);
+	border-radius: 1% 1% 1% 1%;
+
+}
+.list-container
+{
+	padding: 10px;
+	font-family: calibri,serif;
+	border-bottom: 1px solid silver;
+
+}
+.job-container
+{
+	background-color: rgba(255, 255, 255, 0.74);
+	height: 700px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 2px solid rgba(192, 192, 192, 0.35);
+	border-radius: 1% 1% 1% 1%;
+}
+.selectpicker
+{
+	line-height: 24px;
+}
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

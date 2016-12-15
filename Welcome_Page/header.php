@@ -10,7 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/cover.css"/>
-		<script type="text/javascript" src="../script/signup_login.js"></script>
+		<script type="text/javascript" src="../script/login_signup.js"></script>
+	
 		<script type="text/javascript" src="../script/jquery-1.12.1.min.js"></script>
 		<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
 	</head>

@@ -1,16 +1,54 @@
 <?php
-
-
 	include_once("Database_Connect.php");
 
 	if(isset($_REQUEST['data']))
 	{
+
 		$name = $_REQUEST['data']['name'];
+		$address = $_REQUEST['data']['address'];
+		$gender = $_REQUEST['data']['gender'];
+		$school = $_REQUEST['data']['school'];
 		$course = $_REQUEST['data']['course'];
+		$birthdate = $_REQUEST['data']['birthday'];
+			$birthdate = strtotime($birthdate);
+			$year = date('Y');
+
+			if(date('Y-m-d') == date('Y-m-d',$birthdate))
+			{
+				
+				$bd = date('Y',$birthdate);
+				$age = $year - $birthdate;
+			}
+			else
+			{
+
+				if(date('m')>=date('m',$birthdate))
+				{
+					if(date('d')>=date('d',$birthdate))
+					{
+						$bd = date('Y',$birthdate);
+						$age = $year - $bd;
+					}
+					else
+					{
+						$bd = date('Y',$birthdate);
+						$age = ($year - $bd)-1;
+					}
+					
+				}
+				else
+				{
+					$bd = date('Y',$birthdate);
+					$age = ($year - $bd)-1;
+					
+				}
+			}
+
+			$birthdate = date('Y-m-d',$birthdate);
+		
 		$email = $_REQUEST['data']['email'];
 		$username = $_REQUEST['data']['user'];
 		$password = md5($_REQUEST['data']['pass']);
-		$profile_picture = $_REQUEST['data']['prpic'];
 		$type = 1;
 
 			$db_users = mysqli_query($db_connect,"select username from applicant");
@@ -23,26 +61,40 @@
 					}
 				}
 
-
-			$db_insert= "INSERT INTO Applicant(
-			applicant_Name,
+			$db_insert= "INSERT INTO applicant(
+			name,
+			address,
+			birthdate,
+			school,
 			course,
-			email_Address,
+			email,
+			age,
+			gender,
 			username,
 			password,
-			profile_Picture,
 			type)values(
 				'$name',
+				'$address',
+				'$birthdate',
+				'$school',
 				'$course',
 				'$email',
+				'$age',
+				'$gender',
 				'$username',
 				'$password',
-				'$profile_picture',
 				'$type')";
 			if(mysqli_query($db_connect,$db_insert))
 			{
+				$get_user_id = mysqli_query($db_connect,"select applicant_id from applicant where username = '$username'");
+				$get_user_id = mysqli_fetch_array($get_user_id);
 				 $_SESSION['user_type'] = $type;
-				 $_SESSION['user'] = $username;
+				 $_SESSION['user_id'] = $get_user_id['applicant_id'];
+				
+			}
+			else
+			{
+				var_dump($db_connect);
 			}	
 	}
 
